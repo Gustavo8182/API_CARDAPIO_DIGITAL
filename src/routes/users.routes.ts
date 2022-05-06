@@ -19,6 +19,18 @@ router.get('/:id', async (req: Request, res: Response) => {
     
 });
 
+router.post('/login', async (req: Request, res: Response) => {
+    try {
+        const result = await UserService.getByEmail(req.body);
+        if(result?.email == req.body.email){
+            res.send(result);
+        }        
+    } catch (e) {
+        res.status(500).send(e);
+    }
+    
+});
+
 router.post('/', async (req: Request, res: Response) => {
     await UserService.create(req.body);
     res.status(201).send("Usuario criado com sucesso!");

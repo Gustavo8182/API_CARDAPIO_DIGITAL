@@ -13,6 +13,11 @@ export class UserRepository {
         .findOne(id);
     }
 
+    static getByEmail(email: string) {
+        return getConnection()
+        .getRepository(User)
+        .findOne(email);
+    }
     static create(user: User) {
         return getConnection()
         .getRepository(User)

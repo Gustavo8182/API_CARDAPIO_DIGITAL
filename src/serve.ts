@@ -4,6 +4,7 @@ import { connection } from './database/config';
 
 import userRouter from './routes/users.routes';
 import snackRouter from './routes/snack.routes';
+import requestRouter from './routes/request.routes';
 
 const port = 3000;
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use('/users', userRouter);
 app.use('/snacks', snackRouter);
+app.use('/request', requestRouter);
 
 app.get('/', (req: Request, res: Response) => {
     const messageObject = {

@@ -14,7 +14,9 @@ class UserService {
         return UserRepository.getById(id);
     }
 
-
+    getByEmail(email:string) {
+        return UserRepository.getByEmail(email);
+    }
     create(user: User) {
         return UserRepository.create(user);
     }

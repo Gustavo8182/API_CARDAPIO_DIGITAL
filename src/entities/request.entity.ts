@@ -1,27 +1,30 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity({ name: 'request' })
+@Entity({ name: 'requestSnack' })
 export class Request {
 
-    @PrimaryGeneratedColumn({ name: 'idRequest' })
+    @PrimaryGeneratedColumn({ name: 'idRS' })
     idRequest?: number;
 
+    @Column({ name: 'namSnack', type: 'varchar'})
+    namSnack?: string;
+
+    @Column({ name: 'price', type: 'double'})
+    price?: Date;
+
+    @Column({ name: 'amount', type: 'int'})
+    amount?: string;   
+
     @Column({ name: 'nameClient', type: 'varchar'})
-    nameClient?: string;
+    nameClient?: number;
 
     @Column({ name: 'dat', type: 'date'})
-    dat?: Date;
+    dat?: number;
 
     @Column({ name: 'payment', type: 'varchar'})
-    payment?: string;   
-
-    @Column({ name: 'totalPrice', type: 'double'})
-    totalPrice?: number;
-
+    payment?: number;   
+    
     @Column({ name: 'address', type: 'varchar'})
-    address?: number;
-
-    @Column({ name: 'snack', type: 'int'})
-    snack?: number;   
+    address?: number; 
     
 }
