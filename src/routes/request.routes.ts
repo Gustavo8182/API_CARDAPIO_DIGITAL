@@ -23,7 +23,7 @@ router.post('/', async (req: Request, res: Response) => {
     res.status(201).send("Pedido criado com sucesso!");
 });
 
-router.delete('/:id', async (req: Request, res: Response) => {
+router.delete('/remove/:id', async (req: Request, res: Response) => {
     const requestId = parseInt(req.params.id);
     const request = await requestService.getById(requestId);
     if (!request) return res.status(404).send('Pedido não encontrado! ');
