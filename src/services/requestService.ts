@@ -15,8 +15,13 @@ class RequestService {
     }
 
 
-    create(request: Request) {
-        return RequestRepository.create(request);
+    create(request: Array<Request>) {
+        let element;
+        for (let index = 0; index < request.length; index++) {
+            element = RequestRepository.create(request[index]);
+            
+        }
+        return element;
     }
 
    remove(id: number) {
